@@ -24,8 +24,7 @@
 (defn push-to-queue [q x]
   (doall (concat q (list x))))
 
-;(defn peek-at-queue [q] (peek (list q)))
-(defn peek-at-queue [q] (nth q 0))
+(defn peek-at-queue [q] (first q))
 
 (defn pop-from-queue [q]
   (if (empty? q) (list) (rest q)))
