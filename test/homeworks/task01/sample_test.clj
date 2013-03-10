@@ -15,16 +15,16 @@
       (is (fuzzy-equals? -1 (bisect #(+ (* (* % %) %) 1) -100 100 fuzzy-equals?)))
       (is (fuzzy-equals? (- 1/2) ((make-bisector difference) f -100 100)))
       (is (fuzzy-equals? -1 ((make-bisector difference) #(+ (* (* % %) %) 1) -100 100)))
-      (is (fuzzy-equals? 0 ((make-bisector difference) #(+ % %) -100 100))))))
+      (is (fuzzy-equals? 0 ((make-bisector difference) #(+ % %) -100 100)))))
 
-;  (testing "queue"
-;    (is (= "baba"
-;           (peek-at-queue
-;             (push-to-queue
-;               (push-to-queue
-;                 (pop-from-queue
-;                   (push-to-queue (make-queue) "wink-wink"))
-;                 "baba")
-;               "wink-wink"))))))
+  (testing "queue"
+    (is (= "baba"
+           (peek-at-queue
+             (push-to-queue
+               (push-to-queue
+                 (pop-from-queue
+                   (push-to-queue (make-queue) "wink-wink"))
+                 "baba")
+               "wink-wink"))))))
 
 (run-tests)

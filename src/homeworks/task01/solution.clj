@@ -19,3 +19,15 @@
         (if (neg? (f b)) nil (bisect f a b eq?))
         (if (pos? (f b)) nil (bisect f b a eq?))))))
 
+(defn make-queue [] (list))
+
+(defn push-to-queue [q x]
+  (doall (concat q (list x))))
+
+;(defn peek-at-queue [q] (peek (list q)))
+(defn peek-at-queue [q] (nth q 0))
+
+(defn pop-from-queue [q]
+  (if (empty? q) (list) (rest q)))
+
+(defn empty-queue? [q] (empty? q))
