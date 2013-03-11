@@ -22,7 +22,7 @@
 (defn make-queue [] (list))
 
 (defn push-to-queue [q x]
-  (doall (concat q (list x))))
+  (concat q (list x)))
 
 (defn peek-at-queue [q] (first q))
 
